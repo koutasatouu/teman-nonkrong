@@ -1,465 +1,795 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teman Nongkrong - Peluang Kemitraan F&B</title>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>teman nongkrong - Peluang Kemitraan F&B</title>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body class="font-sans text-slate-800 bg-slate-50 min-h-screen">
-
+  </head>
+  <body class="font-sans text-slate-800 bg-slate-50 min-h-screen">
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-slate-900 text-white shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo area -->
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-                    <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-slate-900 font-bold text-xl">
-                        TN
-                    </div>
-                    <span class="font-bold text-xl tracking-wide uppercase text-white">Teman Nongkrong</span>
-                </div>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#beranda" class="hover:text-yellow-400 transition-colors">Beranda</a>
-                    <a href="#mengapa-kami" class="hover:text-yellow-400 transition-colors">Keunggulan</a>
-                    <a href="#menu" class="hover:text-yellow-400 transition-colors">Menu</a>
-                    <a href="#kemitraan" class="hover:text-yellow-400 transition-colors">Kemitraan</a>
-                    <a href="#kontak" class="bg-yellow-400 text-slate-900 px-6 py-2 rounded-full font-semibold hover:bg-yellow-300 transition-transform hover:scale-105">
-                        Gabung Sekarang
-                    </a>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white flex items-center justify-center">
-                        <i id="icon-menu" data-lucide="menu" class="w-7 h-7"></i>
-                        <i id="icon-x" data-lucide="x" class="w-7 h-7 hidden"></i>
-                    </button>
-                </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo area -->
+          <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+            <div
+              class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-slate-900 font-bold text-xl"
+            >
+              <img
+                src="/img/logo.png"
+                alt="teman nongkrong logo"
+                style="border-radius: 100%; height: 100%; object-fit: cover"
+              />
             </div>
-        </div>
+            <span
+              class="font-bold text-xl tracking-wide text-white"
+              style="font-family: &quot;quicksand&quot;, sans-serif"
+              >teman nongkrong
+            </span>
+          </div>
 
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-t border-slate-700">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#beranda" class="block px-3 py-2 text-base font-medium hover:text-yellow-400">Beranda</a>
-                <a href="#mengapa-kami" class="block px-3 py-2 text-base font-medium hover:text-yellow-400">Keunggulan</a>
-                <a href="#menu" class="block px-3 py-2 text-base font-medium hover:text-yellow-400">Menu</a>
-                <a href="#kemitraan" class="block px-3 py-2 text-base font-medium hover:text-yellow-400">Kemitraan</a>
-                <a href="#kontak" class="block px-3 py-2 text-base font-medium text-yellow-400 hover:text-yellow-300">Gabung Sekarang</a>
-            </div>
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#beranda" class="hover:text-yellow-400 transition-colors"
+              >Beranda</a
+            >
+            <a
+              href="#mengapa-kami"
+              class="hover:text-yellow-400 transition-colors"
+              >Keunggulan</a
+            >
+            <a href="#menu" class="hover:text-yellow-400 transition-colors"
+              >Menu</a
+            >
+            <a href="#kemitraan" class="hover:text-yellow-400 transition-colors"
+              >Kemitraan</a
+            >
+            <a
+              href="#kontak"
+              class="bg-yellow-400 text-slate-900 px-6 py-2 rounded-full font-semibold hover:bg-yellow-300 transition-transform hover:scale-105"
+            >
+              Gabung Sekarang
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-btn"
+              class="text-gray-300 hover:text-white flex items-center justify-center"
+            >
+              <i id="icon-menu" data-lucide="menu" class="w-7 h-7"></i>
+              <i id="icon-x" data-lucide="x" class="w-7 h-7 hidden"></i>
+            </button>
+          </div>
         </div>
+      </div>
+
+      <!-- Mobile Menu (Hidden by default) -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-slate-800 border-t border-slate-700"
+      >
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="#beranda"
+            class="block px-3 py-2 text-base font-medium hover:text-yellow-400"
+            >Beranda</a
+          >
+          <a
+            href="#mengapa-kami"
+            class="block px-3 py-2 text-base font-medium hover:text-yellow-400"
+            >Keunggulan</a
+          >
+          <a
+            href="#menu"
+            class="block px-3 py-2 text-base font-medium hover:text-yellow-400"
+            >Menu</a
+          >
+          <a
+            href="#kemitraan"
+            class="block px-3 py-2 text-base font-medium hover:text-yellow-400"
+            >Kemitraan</a
+          >
+          <a
+            href="#kontak"
+            class="block px-3 py-2 text-base font-medium text-yellow-400 hover:text-yellow-300"
+            >Gabung Sekarang</a
+          >
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="beranda" class="relative pt-20 pb-32 flex items-center min-h-[90vh]" style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=2000'); background-size: cover; background-position: center;">
-        <!-- Dark overlay -->
-        <div class="absolute inset-0 bg-slate-900/80"></div>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left flex flex-col md:flex-row items-center">
-            <div class="md:w-3/5 text-white pr-0 md:pr-10 mt-20 md:mt-0">
-                <span class="inline-block py-1 px-3 rounded-full bg-yellow-400/20 text-yellow-400 font-semibold text-sm mb-4 border border-yellow-400/50">
-                    #1 Peluang Kemitraan F&B
-                </span>
-                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                    Kemitraan Cafe Paling <span class="text-yellow-400">Terlaris</span> Tiap Bulannya
-                </h1>
-                <p class="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl">
-                    Raih keuntungan maksimal dengan bergabung bersama Teman Nongkrong. Bisnis F&B kekinian yang sudah terbukti di ratusan kota di Indonesia.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#kemitraan" class="bg-yellow-400 text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-all flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-yellow-400/20">
-                        Lihat Paket Kemitraan <i data-lucide="chevron-right" class="w-5 h-5"></i>
-                    </a>
-                    <a href="#mengapa-kami" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center">
-                        Pelajari Lebih Lanjut
-                    </a>
-                </div>
-            </div>
-            
-            <div class="md:w-2/5 mt-16 md:mt-0 hidden md:block">
-                <img src="https://images.unsplash.com/photo-1559925393-8be0a33e50f1?auto=format&fit=crop&q=80&w=800" alt="Teman Nongkrong Produk" class="rounded-2xl shadow-2xl border-4 border-slate-800 rotate-2 hover:rotate-0 transition-transform duration-500">
-            </div>
+    <section
+      id="beranda"
+      class="relative pt-20 pb-32 flex items-center min-h-[90vh]"
+      style="
+        background-image: url(&quot;https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=2000&quot;);
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <!-- Dark overlay -->
+      <div class="absolute inset-0 bg-slate-900/80"></div>
+
+      <div
+        class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left flex flex-col md:flex-row items-center"
+      >
+        <div class="md:w-3/5 text-white pr-0 md:pr-10 mt-20 md:mt-0">
+          <span
+            class="inline-block py-1 px-3 rounded-full bg-yellow-400/20 text-yellow-400 font-semibold text-sm mb-4 border border-yellow-400/50"
+          >
+            #1 Peluang Kemitraan F&B
+          </span>
+          <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+            Kemitraan Cafe Paling
+            <span class="text-yellow-400">Terlaris</span> Tiap Bulannya
+          </h1>
+          <p
+            class="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl"
+          >
+            Raih keuntungan maksimal dengan bergabung bersama teman nongkrong .
+            Bisnis F&B kekinian yang sudah terbukti di ratusan kota di
+            Indonesia.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+          >
+            <a
+              href="#kemitraan"
+              class="bg-yellow-400 text-slate-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-all flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-yellow-400/20"
+            >
+              Lihat Paket Kemitraan
+              <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </a>
+            <a
+              href="#mengapa-kami"
+              class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center"
+            >
+              Pelajari Lebih Lanjut
+            </a>
+          </div>
         </div>
+
+        <div class="md:w-2/5 mt-16 md:mt-0 hidden md:block">
+          <img
+            src="/img/front.webp"
+            alt="teman nongkrong     Produk"
+            class="rounded-2xl shadow-2xl border-4 border-slate-800 rotate-2 hover:rotate-0 transition-transform duration-500"
+          />
+        </div>
+      </div>
     </section>
 
     <!-- Stats Section -->
     <section class="bg-slate-900 border-b border-slate-800 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-slate-800">
-                <div>
-                    <p class="text-4xl font-bold text-yellow-400 mb-2">500+</p>
-                    <p class="text-slate-400 font-medium">Mitra Tersebar</p>
-                </div>
-                <div>
-                    <p class="text-4xl font-bold text-yellow-400 mb-2">10</p>
-                    <p class="text-slate-400 font-medium">Provinsi</p>
-                </div>
-                <div>
-                    <p class="text-4xl font-bold text-yellow-400 mb-2">200+</p>
-                    <p class="text-slate-400 font-medium">Kota di Indonesia</p>
-                </div>
-                <div>
-                    <p class="text-4xl font-bold text-yellow-400 mb-2">100%</p>
-                    <p class="text-slate-400 font-medium">Support Pusat</p>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center divide-x divide-slate-800"
+        >
+          <div>
+            <p class="text-4xl font-bold text-yellow-400 mb-2">900+</p>
+            <p class="text-slate-400 font-medium">Outlet di Nusantara</p>
+          </div>
+          <div>
+            <p class="text-4xl font-bold text-yellow-400 mb-2">10</p>
+            <p class="text-slate-400 font-medium">Brand F&B</p>
+          </div>
+          <div>
+            <p class="text-4xl font-bold text-yellow-400 mb-2">320+</p>
+            <p class="text-slate-400 font-medium">Menu Favorit</p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Why Us Section -->
     <section id="mengapa-kami" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Mengapa Memilih <span class="text-yellow-500">Teman Nongkrong?</span></h2>
-                <div class="w-24 h-1 bg-yellow-400 mx-auto rounded-full"></div>
-                <p class="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
-                    Kami tidak hanya menjual produk, tetapi kami menawarkan sistem bisnis yang sudah teruji dan terbukti menguntungkan.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <!-- Feature 1 -->
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:border-yellow-200 transition-all group">
-                    <div class="w-16 h-16 bg-slate-900 text-yellow-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-yellow-400 group-hover:text-slate-900 transition-all">
-                        <i data-lucide="award" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Produk Berkualitas</h3>
-                    <p class="text-gray-600 leading-relaxed">Beragam varian menu makanan dan minuman kekinian dengan cita rasa yang disukai semua kalangan, dari kopi, boba, hingga toast.</p>
-                </div>
-
-                <!-- Feature 2 -->
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:border-yellow-200 transition-all group">
-                    <div class="w-16 h-16 bg-slate-900 text-yellow-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-yellow-400 group-hover:text-slate-900 transition-all">
-                        <i data-lucide="trending-up" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">ROI Cepat (Balik Modal)</h3>
-                    <p class="text-gray-600 leading-relaxed">Sistem kemitraan yang dirancang khusus dengan Harga Pokok Penjualan (HPP) rendah sehingga margin keuntungan maksimal.</p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:border-yellow-200 transition-all group">
-                    <div class="w-16 h-16 bg-slate-900 text-yellow-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-yellow-400 group-hover:text-slate-900 transition-all">
-                        <i data-lucide="store" class="w-10 h-10"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Support Setup & Desain</h3>
-                    <p class="text-gray-600 leading-relaxed">Mendapatkan fasilitas lengkap mulai dari peralatan, perlengkapan, hingga dukungan desain booth/outlet yang eye-catching.</p>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Mengapa Memilih
+            <span class="text-yellow-500">teman nongkrong ?</span>
+          </h2>
+          <div class="w-24 h-1 bg-yellow-400 mx-auto rounded-full"></div>
+          <p class="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
+            Kami tidak hanya menjual produk, tetapi kami menawarkan sistem
+            bisnis yang sudah teruji dan terbukti menguntungkan.
+          </p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <!-- Feature 1 -->
+          <div
+            class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:border-yellow-200 transition-all group"
+          >
+            <div
+              class="w-16 h-16 bg-slate-900 text-yellow-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-yellow-400 group-hover:text-slate-900 transition-all"
+            >
+              <i data-lucide="award" class="w-10 h-10"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Produk Berkualitas
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Beragam varian menu makanan dan minuman kekinian dengan cita rasa
+              yang disukai semua kalangan, dari kopi, boba, hingga toast.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div
+            class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:border-yellow-200 transition-all group"
+          >
+            <div
+              class="w-16 h-16 bg-slate-900 text-yellow-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-yellow-400 group-hover:text-slate-900 transition-all"
+            >
+              <i data-lucide="trending-up" class="w-10 h-10"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              ROI Cepat (Balik Modal)
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Sistem kemitraan yang dirancang khusus dengan Harga Pokok
+              Penjualan (HPP) rendah sehingga margin keuntungan maksimal.
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div
+            class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:border-yellow-200 transition-all group"
+          >
+            <div
+              class="w-16 h-16 bg-slate-900 text-yellow-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-yellow-400 group-hover:text-slate-900 transition-all"
+            >
+              <i data-lucide="store" class="w-10 h-10"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Support Setup & Desain
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Mendapatkan fasilitas lengkap mulai dari peralatan, perlengkapan,
+              hingga dukungan desain booth/outlet yang eye-catching.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Menu Highlight -->
     <section id="menu" class="py-24 bg-slate-50 border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Pilihan Menu <span class="text-yellow-500">Terlengkap</span></h2>
-                <div class="w-24 h-1 bg-yellow-400 mx-auto rounded-full"></div>
-                <p class="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
-                    Senjata utama mitra kami adalah variasi menu yang tidak pernah sepi peminat. Dari makanan berat, camilan, hingga minuman kekinian.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Food Card -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                    <div class="h-48 bg-slate-200" style="background-image: url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&q=80&w=600'); background-size: cover; background-position: center;"></div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">Main Course & Toast</h3>
-                        <ul class="text-gray-600 text-sm space-y-2">
-                            <li>• Paket DoNasi / Eliminasi</li>
-                            <li>• TTM Creamy Egg / Hot Tuna</li>
-                            <li>• Ayam Bakar / Goreng Kremes</li>
-                            <li>• Beef Steak / Chicken Steak</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Coffee Card -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                    <div class="h-48 bg-slate-200" style="background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=600'); background-size: cover; background-position: center;"></div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">Coffee & Non-Coffee</h3>
-                        <ul class="text-gray-600 text-sm space-y-2">
-                            <li>• SKS (Susu Kopi Es)</li>
-                            <li>• Ice Caramel / Hazelnut Latte</li>
-                            <li>• Ice Green Matcha Latte</li>
-                            <li>• Ice Red Velvet / Taro</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Boba Card -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                    <div class="h-48 bg-slate-200" style="background-image: url('https://images.unsplash.com/photo-1558857563-b37102e99e05?auto=format&fit=crop&q=80&w=600'); background-size: cover; background-position: center;"></div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">Boba & Mojitos</h3>
-                        <ul class="text-gray-600 text-sm space-y-2">
-                            <li>• Brown Sugar Boba Milk</li>
-                            <li>• Salted Caramel Boba Milk</li>
-                            <li>• Ocean Blue / Orange Blue</li>
-                            <li>• Lychee Tea with Boba</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Snack Card -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                    <div class="h-48 bg-slate-200" style="background-image: url('https://images.unsplash.com/photo-1585109649139-366815a0d713?auto=format&fit=crop&q=80&w=600'); background-size: cover; background-position: center;"></div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">Cemilan & Dessert</h3>
-                        <ul class="text-gray-600 text-sm space-y-2">
-                            <li>• French Fries / Onion Ring</li>
-                            <li>• Chicken Nugget Finger</li>
-                            <li>• Roti Bakar Berbagai Rasa</li>
-                            <li>• Ice Cream Tea / Vanilla Cone</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Pilihan Menu <span class="text-yellow-500">Terlengkap</span>
+          </h2>
+          <div class="w-24 h-1 bg-yellow-400 mx-auto rounded-full"></div>
+          <p class="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
+            Senjata utama mitra kami adalah variasi menu yang tidak pernah sepi
+            peminat. Dari makanan berat, camilan, hingga minuman kekinian.
+          </p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Food Card -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="h-48 bg-slate-200"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&q=80&w=600&quot;);
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            <div class="p-6">
+              <h3 class="font-bold text-xl mb-2">Main Course & Toast</h3>
+              <ul class="text-gray-600 text-sm space-y-2">
+                <li>• Paket DoNasi / Eliminasi</li>
+                <li>• TTM Creamy Egg / Hot Tuna</li>
+                <li>• Ayam Bakar / Goreng Kremes</li>
+                <li>• Beef Steak / Chicken Steak</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Coffee Card -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="h-48 bg-slate-200"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=600&quot;);
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            <div class="p-6">
+              <h3 class="font-bold text-xl mb-2">Coffee & Non-Coffee</h3>
+              <ul class="text-gray-600 text-sm space-y-2">
+                <li>• SKS (Susu Kopi Es)</li>
+                <li>• Ice Caramel / Hazelnut Latte</li>
+                <li>• Ice Green Matcha Latte</li>
+                <li>• Ice Red Velvet / Taro</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Boba Card -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="h-48 bg-slate-200"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1734770580735-796a00e42cb2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&quot;);
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            <div class="p-6">
+              <h3 class="font-bold text-xl mb-2">Boba & Mojitos</h3>
+              <ul class="text-gray-600 text-sm space-y-2">
+                <li>• Brown Sugar Boba Milk</li>
+                <li>• Salted Caramel Boba Milk</li>
+                <li>• Ocean Blue / Orange Blue</li>
+                <li>• Lychee Tea with Boba</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Snack Card -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div
+              class="h-48 bg-slate-200"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1585109649139-366815a0d713?auto=format&fit=crop&q=80&w=600&quot;);
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            <div class="p-6">
+              <h3 class="font-bold text-xl mb-2">Cemilan & Dessert</h3>
+              <ul class="text-gray-600 text-sm space-y-2">
+                <li>• French Fries / Onion Ring</li>
+                <li>• Chicken Nugget Finger</li>
+                <li>• Roti Bakar Berbagai Rasa</li>
+                <li>• Ice Cream Tea / Vanilla Cone</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Pricing / Packages Section -->
     <section id="kemitraan" class="py-24 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Pilihan Paket <span class="text-yellow-400">Kemitraan</span></h2>
-                <div class="w-24 h-1 bg-yellow-400 mx-auto rounded-full"></div>
-                <p class="mt-6 text-slate-300 max-w-2xl mx-auto text-lg">
-                    Pilih paket investasi yang sesuai dengan budget dan target pasar Anda. Semua paket sudah termasuk peralatan lengkap siap jualan.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                <!-- Package 1 -->
-                <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700 hover:border-slate-500 transition-all">
-                    <h3 class="text-2xl font-bold mb-2">Paket Booth</h3>
-                    <p class="text-slate-400 mb-6">Cocok untuk teras minimarket atau area semi-outdoor.</p>
-                    <div class="mb-8">
-                        <span class="text-4xl font-bold text-yellow-400">Promo</span>
-                        <span class="text-slate-400 ml-2">/ Terbatas</span>
-                    </div>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-yellow-400 shrink-0 mt-0.5 w-5 h-5"></i>
-                            <span class="text-slate-300">Booth Portable Eksklusif</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-yellow-400 shrink-0 mt-0.5 w-5 h-5"></i>
-                            <span class="text-slate-300">Peralatan Minuman Lengkap</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-yellow-400 shrink-0 mt-0.5 w-5 h-5"></i>
-                            <span class="text-slate-300">Bahan Baku Awal</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-yellow-400 shrink-0 mt-0.5 w-5 h-5"></i>
-                            <span class="text-slate-300">Seragam Karyawan</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-yellow-400 shrink-0 mt-0.5 w-5 h-5"></i>
-                            <span class="text-slate-300">Materi Promosi (Banner/Menu)</span>
-                        </li>
-                    </ul>
-                    <button class="w-full bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-6 rounded-xl transition-colors">
-                        Tanya Harga Detail
-                    </button>
-                </div>
-
-                <!-- Package 2 - Highlighted -->
-                <div class="bg-gradient-to-b from-yellow-400 to-yellow-500 rounded-3xl p-8 border-2 border-yellow-300 transform md:-translate-y-4 shadow-2xl shadow-yellow-500/20 text-slate-900 relative">
-                    <div class="absolute top-0 right-0 bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-2xl uppercase tracking-wider">
-                        Terlaris
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Paket Mini Cafe</h3>
-                    <p class="text-slate-800/80 mb-6">Paket komplit untuk setup ruko atau kios pinggir jalan.</p>
-                    <div class="mb-8">
-                        <span class="text-4xl font-bold">Best ROI</span>
-                    </div>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-slate-900 shrink-0 mt-0.5 w-5 h-5"></i>
-                            <span class="font-medium">Desain Interior & Eksterior</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-slate-900 shrink-0 mt-0.5 w-5 h-5"></i>
-                            <span class="font-medium">Peralatan Makanan & Minuman</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-slate-900 shrink-0 mt-0.5 w-5 h-5"></i>
-                            <span class="font-medium">Sistem Kasir (POS)</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-slate-900 shrink-0 mt-0.5 w-5 h-5"></i>
-                            <span class="font-medium">Training Karyawan Offline/Online</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-slate-900 shrink-0 mt-0.5 w-5 h-5"></i>
-                            <span class="font-medium">Bahan Baku Lengkap</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-slate-900 shrink-0 mt-0.5 w-5 h-5"></i>
-                            <span class="font-medium">Support Marketing Digital</span>
-                        </li>
-                    </ul>
-                    <button class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 px-6 rounded-xl transition-colors text-lg shadow-lg">
-                        Pilih Paket Ini
-                    </button>
-                </div>
-
-                <!-- Package 3 -->
-                <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700 hover:border-slate-500 transition-all">
-                    <h3 class="text-2xl font-bold mb-2">Paket Master</h3>
-                    <p class="text-slate-400 mb-6">Buka cafe skala besar dengan menu terlengkap kami.</p>
-                    <div class="mb-8">
-                        <span class="text-4xl font-bold text-yellow-400">Custom</span>
-                    </div>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-yellow-400 shrink-0 mt-0.5 w-5 h-5"></i>
-                            <span class="text-slate-300">Semua Fasilitas Mini Cafe</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-yellow-400 shrink-0 mt-0.5 w-5 h-5"></i>
-                            <span class="text-slate-300">Desain Arsitektur Full</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-yellow-400 shrink-0 mt-0.5 w-5 h-5"></i>
-                            <span class="text-slate-300">Peralatan Dapur Industrial</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-yellow-400 shrink-0 mt-0.5 w-5 h-5"></i>
-                            <span class="text-slate-300">Support Grand Opening</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle-2" class="text-yellow-400 shrink-0 mt-0.5 w-5 h-5"></i>
-                            <span class="text-slate-300">Lisensi Eksklusif Area</span>
-                        </li>
-                    </ul>
-                    <button class="w-full bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-6 rounded-xl transition-colors">
-                        Konsultasi Dulu
-                    </button>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <p
+            class="inline-block py-1 px-3 rounded-full bg-yellow-400/20 text-yellow-400 font-semibold text-sm mb-4 border border-yellow-400/50"
+          >
+            Pilihan Paket Kemitraan
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Ayo Bergabung <span class="text-yellow-400">Teman Nongkrong</span>
+          </h2>
+          <div class="w-24 h-1 bg-yellow-400 mx-auto rounded-full"></div>
+          <p class="mt-6 text-slate-300 max-w-2xl mx-auto text-lg">
+            Daftarkan diri anda dan pelajari tentang bisnis kemitraan kami. Kami
+            sangat senang bisa bersinergi dengan anda.
+          </p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+          <!-- Package 1 -->
+          <div
+            class="bg-slate-800 rounded-3xl p-8 border border-slate-700 hover:border-slate-500 transition-all"
+          >
+            <h3 class="text-2xl font-bold mb-2">Mini Coffee Shop</h3>
+            <p class="text-slate-400 mb-6">
+              Paket paling terjangkau untuk memulai bisnis cafe dengan modal
+              minim.
+            </p>
+            <div class="mb-8">
+              <span class="text-slate-400">Rp</span>
+              <span class="text-4xl font-bold text-yellow-400"
+                >177.100.000</span
+              >
+            </div>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="check-circle-2"
+                  class="text-yellow-400 shrink-0 mt-0.5 w-5 h-5"
+                ></i>
+                <span class="text-slate-300">Pembayaran 1x Seumur Hidup</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="check-circle-2"
+                  class="text-yellow-400 shrink-0 mt-0.5 w-5 h-5"
+                ></i>
+                <span class="text-slate-300">Lokasi Kami Bantu GRATIS!</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="check-circle-2"
+                  class="text-yellow-400 shrink-0 mt-0.5 w-5 h-5"
+                ></i>
+                <span class="text-slate-300"
+                  >Pengukuran Arsitektur GRAITS!</span
+                >
+              </li>
+            </ul>
+            <a
+              href="https://api.whatsapp.com/send?phone=6287777705612&text=Hi,%20*Teman%20Nongkrong*%20mau%20tanya%20tentang%20paket%20*Paket%20Mini%20Coffee%20Shop*%20dong."
+              class="w-full bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-6 rounded-xl transition-colors"
+            >
+              Tanya Harga Detail
+            </a>
+          </div>
+
+          <!-- Package 2 - Highlighted -->
+          <div
+            class="bg-gradient-to-b from-yellow-400 to-yellow-500 rounded-3xl p-8 transform md:-translate-y-4 shadow-2xl shadow-yellow-500/20 text-slate-900 relative"
+          >
+            <div
+              class="absolute top-0 right-0 bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-2xl uppercase tracking-wider"
+            >
+              Terlaris
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Coffee Shop</h3>
+            <p class="text-slate-800/80 mb-6">
+              Paket paling lengkap dengan menu terlengkap dan support maksimal.
+            </p>
+            <div class="mb-8">
+              <span class="font-bold ml-2">Rp</span>
+              <span class="text-4xl font-bold">348.100.000</span>
+            </div>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="check-circle-2"
+                  class="text-slate-900 shrink-0 mt-0.5 w-5 h-5"
+                ></i>
+                <span class="font-medium">Pembayaran 1x Seumur Hidup</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="check-circle-2"
+                  class="text-slate-900 shrink-0 mt-0.5 w-5 h-5"
+                ></i>
+                <span class="font-medium">GRATIS Software Kasir(POS)!</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="check-circle-2"
+                  class="text-slate-900 shrink-0 mt-0.5 w-5 h-5"
+                ></i>
+                <span class="font-medium">Pencarian Karyawan GRATIS!</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="check-circle-2"
+                  class="text-slate-900 shrink-0 mt-0.5 w-5 h-5"
+                ></i>
+                <span class="font-medium"
+                  >Training Karyawan Offline/Online</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="check-circle-2"
+                  class="text-slate-900 shrink-0 mt-0.5 w-5 h-5"
+                ></i>
+                <span class="font-medium">Support Marketing Digital</span>
+              </li>
+            </ul>
+            <a
+              href="https://api.whatsapp.com/send?phone=6287777705612&text=Hi,%20*Teman%20Nongkrong*%20mau%20tanya%20tentang%20paket%20*Paket%20Coffee%20Shop*%20dong."
+              class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 px-6 rounded-xl transition-colors text-lg shadow-lg"
+            >
+              Pilih Paket Ini
+            </a>
+          </div>
+
+          <!-- Package 3 -->
+          <div
+            class="bg-slate-800 rounded-3xl p-8 border border-slate-700 hover:border-slate-500 transition-all"
+          >
+            <h3 class="text-2xl font-bold mb-2">Paket Cafe Resto</h3>
+            <p class="text-slate-400 mb-6">
+              Paket paling eksklusif dengan fasilitas dan dukungan paling
+              lengkap.
+            </p>
+            <div class="mb-8">
+              <span class="text-slate-400">Rp</span>
+              <span class="text-4xl font-bold text-yellow-400"
+                >496.100.000</span
+              >
+            </div>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="check-circle-2"
+                  class="text-yellow-400 shrink-0 mt-0.5 w-5 h-5"
+                ></i>
+                <span class="text-slate-300">Pembayaran 1x Seumur Hidup</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="check-circle-2"
+                  class="text-yellow-400 shrink-0 mt-0.5 w-5 h-5"
+                ></i>
+                <span class="text-slate-300"
+                  >Full System Kasir(POS) GRATIS!</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="check-circle-2"
+                  class="text-yellow-400 shrink-0 mt-0.5 w-5 h-5"
+                ></i>
+                <span class="text-slate-300">GARANSI Omzet Tersedia!</span>
+              </li>
+            </ul>
+            <button
+              class="w-full bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-6 rounded-xl transition-colors"
+            >
+              Konsultasi Dulu
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- CTA / Contact Section -->
+    <!-- Maps Section -->
     <section id="kontak" class="py-24 bg-yellow-400">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-slate-900 rounded-[3rem] p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 shadow-2xl">
-                <div class="md:w-1/2 text-white">
-                    <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">Siap Menjadi Bos Cafe Anda Sendiri?</h2>
-                    <p class="text-slate-300 text-lg mb-8">
-                        Jangan lewatkan kesempatan emas ini. Hubungi tim kemitraan kami sekarang untuk mendapatkan penawaran spesial dan simulasi keuntungan lengkap.
-                    </p>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-4 text-slate-300">
-                            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-yellow-400">
-                                <i data-lucide="phone" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <p class="text-sm">WhatsApp Admin Kemitraan</p>
-                                <p class="text-xl font-bold text-white">0812-XXXX-XXXX</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 text-slate-300">
-                            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-yellow-400">
-                                <i data-lucide="map-pin" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <p class="text-sm">Kantor Pusat</p>
-                                <p class="text-lg font-bold text-white">Indonesia</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="bg-slate-900 rounded-[3rem] p-4 md:p-8 flex flex-col gap-8 shadow-2xl border border-slate-800 overflow-hidden"
+        >
+          <div
+            id="gmap-wrapper"
+            class="relative w-full h-40 md:h-48 rounded-[2rem] overflow-hidden transition-all duration-700 ease-in-out cursor-pointer"
+          >
+            <div
+              id="map-darkener"
+              class="absolute inset-0 bg-slate-950 opacity-60 transition-opacity duration-500 pointer-events-none z-10"
+            ></div>
 
-                <div class="md:w-1/2 w-full">
-                    <div class="bg-white rounded-3xl p-8">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-6">Minta Proposal Gratis</h3>
-                        <form class="space-y-4" onsubmit="event.preventDefault();">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
-                                <input type="text" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition-all" placeholder="Masukkan nama Anda" required>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Nomor WhatsApp</label>
-                                <input type="tel" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition-all" placeholder="08xx-xxxx-xxxx" required>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Pilih Kota Rencana Buka</label>
-                                <input type="text" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition-all" placeholder="Contoh: Jakarta Selatan" required>
-                            </div>
-                            <button type="submit" class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-slate-800 transition-colors mt-4">
-                                Kirim Permintaan
-                            </button>
-                            <p class="text-xs text-center text-gray-500 mt-4">Data Anda aman bersama kami. Tim kami akan menghubungi dalam 1x24 jam.</p>
-                        </form>
-                    </div>
+            <iframe
+              id="custom-google-map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.682750419257!2d106.80941399999999!3d-6.1732129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f67c5dce56f9%3A0xb281830aead3b003!2sTeman%20Nongkrong!5e0!3m2!1sid!2sid!4v1781187050854!5m2!1sid!2sid"
+              width="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="w-full h-full object-cover filter grayscale-[20%] contrast-[90%] pointer-events-none transition-all duration-700"
+            ></iframe>
+          </div>
+
+          <div
+            class="flex flex-col md:flex-row items-center justify-between gap-12 px-4 pb-4"
+          >
+            <div class="md:w-1/2 text-white">
+              <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                Siap Menjadi Bos Cafe Anda Sendiri?
+              </h2>
+              <p class="text-slate-300 text-lg mb-8">
+                Jangan lewatkan kesempatan emas ini. Hubungi tim kemitraan kami
+                sekarang untuk mendapatkan penawaran spesial dan simulasi
+                keuntungan lengkap.
+              </p>
+
+              <div class="space-y-4">
+                <div class="flex items-center gap-4 text-slate-300">
+                  <div
+                    class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-yellow-400 shrink-0"
+                  >
+                    <i data-lucide="phone" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm">WhatsApp Admin Kemitraan</p>
+                    <p class="text-xl font-bold text-white">0877-7770-5612</p>
+                  </div>
                 </div>
+                <div class="flex items-center gap-4 text-slate-300">
+                  <div
+                    class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-yellow-400 shrink-0"
+                  >
+                    <i data-lucide="map-pin" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm">Kantor</p>
+                    <p class="text-base font-bold text-white leading-relaxed">
+                      Jl. Musi No.36, Cideng, Kecamatan Gambir, Kota Jakarta
+                      Pusat
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            <div class="md:w-1/2 w-full">
+              <div class="bg-white rounded-3xl p-8 shadow-xl">
+                <h3 class="text-2xl font-bold text-slate-900 mb-6">
+                  Minta Proposal Gratis
+                </h3>
+                <form class="space-y-4" onsubmit="event.preventDefault()">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1"
+                      >Nama Lengkap</label
+                    >
+                    <input
+                      type="text"
+                      class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition-all"
+                      placeholder="Masukkan nama Anda"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1"
+                      >Nomor WhatsApp</label
+                    >
+                    <input
+                      type="tel"
+                      class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition-all"
+                      placeholder="08xx-xxxx-xxxx"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1"
+                      >Pilih Kota Rencana Buka</label
+                    >
+                    <input
+                      type="text"
+                      class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 outline-none transition-all"
+                      placeholder="Contoh: Jakarta Selatan"
+                      required
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-slate-800 transition-colors mt-4"
+                  >
+                    Kirim Permintaan
+                  </button>
+                  <p class="text-xs text-center text-gray-500 mt-4">
+                    Data Anda aman bersama kami. Tim kami akan menghubungi dalam
+                    1x24 jam.
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-slate-900 font-bold text-sm">
-                    TN
-                </div>
-                <span class="font-bold text-lg tracking-wide uppercase text-white">Teman Nongkrong</span>
-            </div>
-            <div class="flex gap-6">
-                <a href="#" class="hover:text-yellow-400 transition-colors">Instagram</a>
-                <a href="#" class="hover:text-yellow-400 transition-colors">TikTok</a>
-                <a href="#" class="hover:text-yellow-400 transition-colors">Facebook</a>
-            </div>
-            <p class="text-sm">
-                &copy; <span id="currentYear"></span> Teman Nongkrong Indonesia. All rights reserved.
-            </p>
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <div class="flex items-center gap-2">
+          <div
+            class="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-slate-900 font-bold text-sm"
+          >
+            <img src="/img/logo.png" alt="" />
+          </div>
+          <span
+            class="font-bold text-lg tracking-wide uppercase text-white"
+            style="font-family: &quot;quicksand&quot;, sans-serif"
+            >teman nongkrong
+          </span>
         </div>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-yellow-400 transition-colors"
+            >Instagram</a
+          >
+          <a href="#" class="hover:text-yellow-400 transition-colors">TikTok</a>
+          <a href="#" class="hover:text-yellow-400 transition-colors"
+            >Facebook</a
+          >
+        </div>
+        <p class="text-sm">
+          &copy; <span id="currentYear"></span> teman nongkrong Indonesia. All
+          rights reserved.
+        </p>
+      </div>
     </footer>
 
     <!-- JavaScript Interactions -->
     <script>
-        // 1. Initialize Lucide Icons
-        lucide.createIcons();
+      // 1. Initialize Lucide Icons
+      lucide.createIcons();
 
-        // 2. Set Current Year in Footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+      // 2. Set Current Year in Footer
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
 
-        // 3. Mobile Menu Toggle Logic
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const iconMenu = document.getElementById('icon-menu');
-        const iconX = document.getElementById('icon-x');
+      // 3. Mobile Menu Toggle Logic
+      const btn = document.getElementById("mobile-menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      const iconMenu = document.getElementById("icon-menu");
+      const iconX = document.getElementById("icon-x");
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-            iconMenu.classList.toggle('hidden');
-            iconX.classList.toggle('hidden');
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+        iconMenu.classList.toggle("hidden");
+        iconX.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when a link is clicked
+      const mobileLinks = menu.querySelectorAll("a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          menu.classList.add("hidden");
+          iconMenu.classList.remove("hidden");
+          iconX.classList.add("hidden");
         });
+      });
 
-        // Close mobile menu when a link is clicked
-        const mobileLinks = menu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-                iconMenu.classList.remove('hidden');
-                iconX.classList.add('hidden');
-            });
-        });
+      // 4. Google Map Hover Interaction Logic
+      const mapWrapper = document.getElementById("gmap-wrapper");
+      const iframeMap = document.getElementById("custom-google-map");
+      const mapDarkener = document.getElementById("map-darkener");
+
+      // Trigger transisi saat kursor masuk area wrapper map
+      mapWrapper.addEventListener("mouseenter", () => {
+        // 1. Naikkan tinggi area peta ke 450px secara halus
+        mapWrapper.style.height = "450px";
+
+        // 2. Buat overlay gelap menghilang sepenuhnya (terang)
+        mapDarkener.classList.remove("opacity-60");
+        mapDarkener.classList.add("opacity-0");
+
+        // 3. Kembalikan warna asli peta dari efek grayscale
+        iframeMap.classList.remove("grayscale-[20%]", "contrast-[90%]");
+
+        // 4. Buka kunci pointer event agar user bisa langsung interaksi
+        iframeMap.classList.remove("pointer-events-none");
+        iframeMap.classList.add("pointer-events-auto");
+      });
+
+      // Kembalikan ke posisi awal saat kursor keluar
+      mapWrapper.addEventListener("mouseleave", () => {
+        // 1. Kosongkan inline height agar kembali ke kelas default (h-40 / h-48)
+        mapWrapper.style.height = "";
+
+        // 2. Munculkan kembali efek redup/gelap
+        mapDarkener.classList.remove("opacity-0");
+        mapDarkener.classList.add("opacity-60");
+
+        // 3. Pasang kembali filter agar warna menyatu dengan tema dark navy
+        iframeMap.classList.add("grayscale-[20%]", "contrast-[90%]");
+
+        // 4. Kunci kembali interaksi agar halaman web bisa di-scroll dengan lancar
+        iframeMap.classList.remove("pointer-events-auto");
+        iframeMap.classList.add("pointer-events-none");
+      });
     </script>
-</body>
+  </body>
 </html>
